@@ -21,7 +21,7 @@ To learn how to develop following the above, see [Implementing a repository patt
 We use it to have better control of the designed components.
 
 ```bash
-flutter -d $target -t widgetbook/main.dart
+flutter run -d $target -t widgetbook/main.dart
 ```
 
 See: [Widgetbook Docs](https://docs.widgetbook.io/)
