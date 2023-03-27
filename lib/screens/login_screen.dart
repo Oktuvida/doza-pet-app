@@ -4,14 +4,14 @@ import 'package:doza_pet/widgets/buttons/form_button.dart';
 import 'package:doza_pet/widgets/inputs/form_input.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginScreenState extends State<LoginScreen> {
   var username = "";
   var password = "";
 
@@ -36,7 +36,13 @@ class _LoginState extends State<Login> {
                   print("I was pressed!");
                 }
               },
-            )
+              child: Text(localizations.continueMessage),
+            ),
+            const Expanded(
+                child: Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: Text("New User? Create Account"),
+            )),
           ],
         ),
       ),

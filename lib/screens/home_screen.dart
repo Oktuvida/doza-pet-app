@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:doza_pet/screens/login.dart';
+import 'package:doza_pet/screens/login_screen.dart';
 import 'package:doza_pet/utils/names.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: theme.colorScheme.primary,
           foregroundColor: theme.colorScheme.onPrimary,
         ),
-        body: const Login());
+        body: const LoginScreen());
   }
 }
