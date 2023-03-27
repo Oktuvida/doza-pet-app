@@ -1,3 +1,4 @@
+import 'package:doza_pet/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       title: appName,
-      home: const HomeScreen(),
+      home: const OnboardingScreen(),
       theme: lightThemeData,
       darkTheme: darkThemeData,
     );
