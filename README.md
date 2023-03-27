@@ -1,4 +1,6 @@
-# Doza Pet
+<p align="center">
+  <img width="256" height="256" src="assets/images/logo.svg">
+</p>
 
 Application to interact with the server (pet food dispenser) and defining the user's pet information for its respective analysis.
 
