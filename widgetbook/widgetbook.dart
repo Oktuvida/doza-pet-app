@@ -1,3 +1,6 @@
+import 'package:doza_pet/screens/login_screen.dart';
+import 'package:doza_pet/screens/onboarding_screen.dart';
+import 'package:doza_pet/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/home_screen.dart';
 import 'package:doza_pet/utils/theme.dart';
@@ -23,7 +26,19 @@ class WidgetbookHotReload extends StatelessWidget {
               WidgetbookComponent(name: "$FormButton", useCases: [
                 WidgetbookUseCase(
                     name: "Default",
-                    builder: (context) => FormButton(onPressed: () {}))
+                    builder: (context) => FormButton(
+                          onPressed: () {},
+                          child: Text(
+                              AppLocalizations.of(context)!.continueMessage),
+                        ))
+              ]),
+              WidgetbookComponent(name: "$PrimaryButton", useCases: [
+                WidgetbookUseCase(
+                    name: "Default",
+                    builder: (context) => PrimaryButton(
+                        onPressed: () {},
+                        child: Text(AppLocalizations.of(context)!
+                            .welcomeButtonMessage)))
               ])
             ])
           ],
@@ -31,7 +46,15 @@ class WidgetbookHotReload extends StatelessWidget {
         WidgetbookCategory(name: "Screens", widgets: [
           WidgetbookComponent(name: "$HomeScreen", useCases: [
             WidgetbookUseCase(
-                name: "Default", builder: (builder) => const HomeScreen())
+                name: "Default", builder: (context) => const HomeScreen())
+          ]),
+          WidgetbookComponent(name: "$OnboardingScreen", useCases: [
+            WidgetbookUseCase(
+                name: "Default", builder: (context) => const OnboardingScreen())
+          ]),
+          WidgetbookComponent(name: "$LoginScreen", useCases: [
+            WidgetbookUseCase(
+                name: "Default", builder: (context) => const LoginScreen())
           ])
         ])
       ],
