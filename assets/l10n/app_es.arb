@@ -1,5 +1,8 @@
 {
   "continueMessage": "Continuar",
   "username": "Nombre de usuario",
-  "password": "Contraseña"
+  "password": "Contraseña",
+  "welcomeHeaderMessage": "¡Bienvenido a nuestra aplicación!",
+  "welcomeBodyMessage": "Aquí podrás asegurarte de que tu mascota siempre tenga suficiente comida",
+  "welcomeButtonMessage": "Comenzar"
 }

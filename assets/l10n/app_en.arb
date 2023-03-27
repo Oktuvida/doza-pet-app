@@ -1,5 +1,8 @@
 {
   "continueMessage": "Continue",
   "username": "Username",
-  "password": "Password"
+  "password": "Password",
+  "welcomeHeaderMessage": "Welcome to our app!",
+  "welcomeBodyMessage": "Here you can make sure your pet always has enough food",
+  "welcomeButtonMessage": "Getting Started"
 }
