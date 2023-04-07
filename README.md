@@ -39,3 +39,11 @@ flutter gen-l10n
 ```
 
 See: [Internationalizing Flutter apps](https://docs.flutter.dev/development/accessibility-and-localization/internationalization)
+
+#### Assets
+
+Availables in [assets folder](/assets), generates all assets (excluding localizations), thus making it possible to handle them with null safety.
+
+```bash
+flutter packages pub run build_runner build
+```
