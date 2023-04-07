@@ -1,4 +1,4 @@
-import 'package:doza_pet/constants/app_constants.dart';
+import 'package:doza_pet/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/login_screen.dart';
 
