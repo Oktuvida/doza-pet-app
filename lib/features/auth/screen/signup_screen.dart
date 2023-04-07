@@ -76,10 +76,9 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     height: 40,
                   ),
                   RichText(
-                      text:
-                          TextSpan(text: "Already have an account?", children: [
+                      text: TextSpan(text: localizations.signInAsk, children: [
                     TextSpan(
-                        text: " Login",
+                        text: " ${localizations.signIn}",
                         style: TextStyle(
                             color: theme.colorScheme.primary, fontSize: 16),
                         recognizer: TapGestureRecognizer()

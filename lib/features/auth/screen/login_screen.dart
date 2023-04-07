@@ -67,9 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 40,
                   ),
                   RichText(
-                      text: TextSpan(text: "Hi, mom!", children: [
+                      text: TextSpan(text: localizations.signUpAsk, children: [
                     TextSpan(
-                        text: " Sign Up",
+                        text: " ${localizations.signUp}",
                         style: TextStyle(
                             color: theme.colorScheme.primary, fontSize: 16),
                         recognizer: TapGestureRecognizer()

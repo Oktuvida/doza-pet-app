@@ -4,5 +4,11 @@
   "password": "Contraseña",
   "welcomeHeaderMessage": "¡Bienvenido a nuestra aplicación!",
   "welcomeBodyMessage": "Aquí podrás asegurarte de que tu mascota siempre tenga suficiente comida",
-  "welcomeButtonMessage": "Comenzar"
+  "welcomeButtonMessage": "Comenzar",
+
+  "signUpAsk": "¿Aún no estás registrado?",
+  "signUp": "Regístrate",
+
+  "signInAsk": "¿Ya estás registrado?",
+  "signIn": "Inicia sesión"
 }
