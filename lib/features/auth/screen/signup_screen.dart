@@ -1,22 +1,24 @@
 import 'package:doza_pet/common/common.dart';
 import 'package:doza_pet/constants/constants.dart';
+import 'package:doza_pet/features/auth/controller/auth_controller.dart';
 import 'package:doza_pet/features/auth/screen/login_screen.dart';
 import 'package:doza_pet/features/auth/widgets/auth_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpScreen extends StatefulWidget {
+class SignUpScreen extends ConsumerStatefulWidget {
   const SignUpScreen({super.key});
 
   static route() =>
       MaterialPageRoute(builder: (context) => const SignUpScreen());
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  ConsumerState<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpScreenState extends ConsumerState<SignUpScreen> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   final appBar = UIConstants.appBar();
@@ -26,6 +28,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
     usernameController.dispose();
     passwordController.dispose();
+  }
+
+  void onSignUp() {
+    final res = ref.read(authControllerProvider.notifier).signUp(
+        username: usernameController.text,
+        password: passwordController.text,
+        context: context);
   }
 
   @override
@@ -57,7 +66,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Align(
                     alignment: Alignment.topRight,
                     child: RoundedSmallButton(
-                      onPressed: () {},
+                      onPressed: onSignUp,
                       label: localizations.continueMessage,
                       backgroundColor: theme.colorScheme.primary,
                       textColor: theme.colorScheme.onPrimary,
