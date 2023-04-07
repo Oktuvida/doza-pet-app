@@ -1,5 +1,4 @@
 import 'package:doza_pet/gen/assets.gen.dart';
-import 'package:doza_pet/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -43,18 +42,6 @@ class OnboardingScreen extends StatelessWidget {
               FittedBox(
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 16.0),
-                  child: PrimaryButton(
-                    onPressed: () => {},
-                    child: Row(
-                      children: [
-                        Text(
-                          localizations.welcomeButtonMessage,
-                        ),
-                        const SizedBox(width: 10),
-                        const Icon(Icons.arrow_forward)
-                      ],
-                    ),
-                  ),
                 ),
               ),
             ],

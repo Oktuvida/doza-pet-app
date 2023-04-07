@@ -1,13 +1,10 @@
 import 'package:doza_pet/constants/constants.dart';
 import 'package:doza_pet/features/auth/screen/login_screen.dart';
 import 'package:doza_pet/screens/onboarding_screen.dart';
-import 'package:doza_pet/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/home_screen.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import 'package:doza_pet/widgets/buttons/form_button.dart';
 
 class WidgetbookHotReload extends StatelessWidget {
   const WidgetbookHotReload({Key? key}) : super(key: key);
@@ -21,27 +18,7 @@ class WidgetbookHotReload extends StatelessWidget {
       categories: [
         WidgetbookCategory(
           name: 'Widgets',
-          folders: [
-            WidgetbookFolder(name: "Buttons", widgets: [
-              WidgetbookComponent(name: "$FormButton", useCases: [
-                WidgetbookUseCase(
-                    name: "Default",
-                    builder: (context) => FormButton(
-                          onPressed: () {},
-                          child: Text(
-                              AppLocalizations.of(context)!.continueMessage),
-                        ))
-              ]),
-              WidgetbookComponent(name: "$PrimaryButton", useCases: [
-                WidgetbookUseCase(
-                    name: "Default",
-                    builder: (context) => PrimaryButton(
-                        onPressed: () {},
-                        child: Text(AppLocalizations.of(context)!
-                            .welcomeButtonMessage)))
-              ])
-            ])
-          ],
+          folders: [WidgetbookFolder(name: "Buttons", widgets: [])],
         ),
         WidgetbookCategory(name: "Screens", widgets: [
           WidgetbookComponent(name: "$HomeScreen", useCases: [
