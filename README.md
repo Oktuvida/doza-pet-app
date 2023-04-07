@@ -44,6 +44,18 @@ See: [Internationalizing Flutter apps](https://docs.flutter.dev/development/acce
 
 Availables in [assets folder](/assets), generates all assets (excluding localizations), thus making it possible to handle them with null safety.
 
+To generate the assets, type:
+
 ```bash
-flutter packages pub run build_runner build
+flutter pub run build_runner build
+```
+
+#### Environment Variables
+
+The necessary environment variables can be found in [env.dart](/lib/env/env.dart).
+
+To generate the environment variables once you have created the respective `.env` file, type:
+
+```bash
+flutter pub run build_runner build
 ```
