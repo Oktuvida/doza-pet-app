@@ -1,11 +1,20 @@
+import 'package:doza_pet/constants/supabase_constants.dart';
 import 'package:doza_pet/features/auth/screen/login_screen.dart';
-import 'package:doza_pet/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'constants/constants.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+      url: SupabaseConstants.url, anonKey: SupabaseConstants.anonKey);
+
+  return runApp(const ProviderScope(child: MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
