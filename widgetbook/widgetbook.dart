@@ -3,7 +3,7 @@ import 'package:doza_pet/screens/onboarding_screen.dart';
 import 'package:doza_pet/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/home_screen.dart';
-import 'package:doza_pet/utils/theme.dart';
+import 'package:doza_pet/constants/theme_constants.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -61,11 +61,11 @@ class WidgetbookHotReload extends StatelessWidget {
       themes: [
         WidgetbookTheme(
           name: 'Light',
-          data: lightThemeData,
+          data: ThemeConstants.light,
         ),
         WidgetbookTheme(
           name: 'Dark',
-          data: darkThemeData,
+          data: ThemeConstants.dark,
         )
       ],
       devices: const [Apple.iPhone11, Samsung.s10, Desktop.desktop1080p],

@@ -1,6 +1,6 @@
+import 'package:doza_pet/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/login_screen.dart';
-import 'package:doza_pet/utils/names.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text(appName),
+          title: const Text(AppConstants.name),
           backgroundColor: theme.colorScheme.primary,
           foregroundColor: theme.colorScheme.onPrimary,
         ),
