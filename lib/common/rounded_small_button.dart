@@ -12,13 +12,16 @@ class RoundedSmallButton extends BaseButton {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      label: Text(
-        label,
-        style: TextStyle(color: textColor, fontSize: 16),
+    return InkWell(
+      onTap: onPressed,
+      child: Chip(
+        label: Text(
+          label,
+          style: TextStyle(color: textColor, fontSize: 16),
+        ),
+        backgroundColor: backgroundColor,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       ),
-      backgroundColor: backgroundColor,
-      labelPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
     );
   }
 }
