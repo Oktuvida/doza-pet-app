@@ -1,3 +1,4 @@
+import 'package:doza_pet/gen/assets.gen.dart';
 import 'package:doza_pet/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -14,9 +15,9 @@ class OnboardingScreen extends StatelessWidget {
         child: Column(children: [
           Expanded(
               child: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/images/cute_dogs.png"),
+                    image: Assets.images.cuteDogs.provider(),
                     fit: BoxFit.cover)),
           )),
           Expanded(
