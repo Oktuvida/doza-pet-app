@@ -1,6 +1,5 @@
 import 'package:doza_pet/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:doza_pet/screens/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,6 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: theme.colorScheme.primary,
           foregroundColor: theme.colorScheme.onPrimary,
         ),
-        body: const LoginScreen());
+        body: const Text("Hi, mom!"));
   }
 }

@@ -1,5 +1,5 @@
 import 'package:doza_pet/constants/constants.dart';
-import 'package:doza_pet/screens/login_screen.dart';
+import 'package:doza_pet/features/auth/screen/login_screen.dart';
 import 'package:doza_pet/screens/onboarding_screen.dart';
 import 'package:doza_pet/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
