@@ -1,12 +1,12 @@
 import 'package:doza_pet/db/virtual_db.dart';
-import 'package:doza_pet/models/user_model.dart';
+import 'package:doza_pet/models/models.dart';
 
 abstract class IUserRepository {
   Future<void> delete(int id);
-  Future<List<UserModel>> getAll();
-  Future<UserModel?> getOne(int id);
-  Future<void> insert(UserModel user);
-  Future<void> update(UserModel user);
+  Future<List<User>> getAll();
+  Future<User?> getOne(int id);
+  Future<void> insert(User user);
+  Future<void> update(User user);
 }
 
 class UserRepository implements IUserRepository {
@@ -20,24 +20,24 @@ class UserRepository implements IUserRepository {
   }
 
   @override
-  Future<List<UserModel>> getAll() async {
+  Future<List<User>> getAll() async {
     var items = await _db.list();
-    return items.map((item) => UserModel.fromMap(item)).toList();
+    return items.map((item) => User.fromMap(item)).toList();
   }
 
   @override
-  Future<UserModel?> getOne(int id) async {
+  Future<User?> getOne(int id) async {
     var item = await _db.findOne(id);
-    return item != null ? UserModel.fromMap(item) : null;
+    return item != null ? User.fromMap(item) : null;
   }
 
   @override
-  Future<void> insert(UserModel user) async {
+  Future<void> insert(User user) async {
     await _db.insert(user.toMap());
   }
 
   @override
-  Future<void> update(UserModel user) async {
+  Future<void> update(User user) async {
     await _db.update(user.toMap());
   }
 }
