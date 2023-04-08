@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JAVA_VERSION: "11"
+      PATCH_VERSION_OFFSET: -12
+      MAJOR_VERSION: 0
+      MINOR_VERSION: 0
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v2
@@ -30,11 +33,12 @@ jobs:
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs  
           flutter build apk --split-per-abi
+      - name: "Retrieve patch version"
+        run: |
+          echo "PATCH_VERSION=$((${{ github.run_number }} + ${{ env.PATCH_VERSION_OFFSET }}))" >> $GITHUB_ENV
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/flutter-apk/*"
-          tag: v1.0.${{ github.run_number }}
+          tag: v${{ env.MAJOR_VERSION }}.${{ env.MINOR_VERSION }}.${{ env.PATCH_VERSION }}
           token: ${{ secrets.TOKEN }}
-# Push to master, main, develop
-# pull request on main master
