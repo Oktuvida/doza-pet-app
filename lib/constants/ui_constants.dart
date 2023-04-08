@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class UIConstants {
+abstract class UIConstants {
   static AppBar appBar() {
     return AppBar();
   }
