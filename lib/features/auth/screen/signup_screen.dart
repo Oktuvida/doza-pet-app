@@ -31,7 +31,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
   }
 
   void onSignUp() {
-    final res = ref.read(authControllerProvider.notifier).signUp(
+    ref.read(authControllerProvider.notifier).signUp(
         username: usernameController.text,
         password: passwordController.text,
         context: context);

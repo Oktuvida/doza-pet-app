@@ -1,31 +1,42 @@
 import 'package:doza_pet/common/common.dart';
 import 'package:doza_pet/constants/constants.dart';
+import 'package:doza_pet/features/auth/controller/auth_controller.dart';
 import 'package:doza_pet/features/auth/screen/signup_screen.dart';
 import 'package:doza_pet/features/auth/widgets/auth_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-class LoginScreen extends StatefulWidget {
+final supabase = Supabase.instance.client;
+
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
   static route() =>
       MaterialPageRoute(builder: (context) => const LoginScreen());
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   final appBar = UIConstants.appBar();
 
   @override
   void dispose() {
-    super.dispose();
     usernameController.dispose();
-    passwordController.dispose();
+    super.dispose();
+  }
+
+  void onSignIn() {
+    ref.read(authControllerProvider.notifier).signIn(
+        username: usernameController.text,
+        password: passwordController.text,
+        context: context);
   }
 
   @override
@@ -57,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Align(
                     alignment: Alignment.topRight,
                     child: RoundedSmallButton(
-                      onPressed: () {},
+                      onPressed: onSignIn,
                       label: localizations.continueMessage,
                       backgroundColor: theme.colorScheme.primary,
                       textColor: theme.colorScheme.onPrimary,
