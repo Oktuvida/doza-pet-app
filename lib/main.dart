@@ -1,5 +1,5 @@
 import 'package:doza_pet/constants/supabase_constants.dart';
-import 'package:doza_pet/features/auth/screen/login_screen.dart';
+import 'package:doza_pet/features/on_boarding/screen/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       title: AppConstants.name,
-      home: const LoginScreen(),
+      home: const OnBoardingScreen(),
       theme: ThemeConstants.light,
       darkTheme: ThemeConstants.dark,
     );
