@@ -15,7 +15,5 @@ abstract class BaseButton extends StatelessWidget {
       this.textColor});
 
   @override
-  Widget build(BuildContext context) {
-    throw UnimplementedError();
-  }
+  Widget build(BuildContext context);
 }
