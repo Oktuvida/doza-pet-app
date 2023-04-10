@@ -68,7 +68,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   Align(
                     alignment: Alignment.topRight,
                     child: RoundedSmallButton(
-                      onPressed: onSignIn,
+                      onTap: onSignIn,
                       label: localizations.continueMessage,
                       backgroundColor: theme.colorScheme.primary,
                       textColor: theme.colorScheme.onPrimary,

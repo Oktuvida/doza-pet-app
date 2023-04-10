@@ -66,7 +66,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   Align(
                     alignment: Alignment.topRight,
                     child: RoundedSmallButton(
-                      onPressed: onSignUp,
+                      onTap: onSignUp,
                       label: localizations.continueMessage,
                       backgroundColor: theme.colorScheme.primary,
                       textColor: theme.colorScheme.onPrimary,

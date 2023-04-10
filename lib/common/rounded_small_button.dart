@@ -5,7 +5,7 @@ import 'abstracts/base_button.dart';
 class RoundedSmallButton extends BaseButton {
   const RoundedSmallButton(
       {super.key,
-      required super.onPressed,
+      required super.onTap,
       required super.label,
       super.backgroundColor,
       super.textColor});
@@ -13,7 +13,7 @@ class RoundedSmallButton extends BaseButton {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPressed,
+      onTap: onTap,
       child: Chip(
         label: Text(
           label,
