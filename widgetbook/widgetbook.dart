@@ -1,5 +1,5 @@
 import 'package:doza_pet/constants/constants.dart';
-import 'package:doza_pet/features/auth/screen/login_screen.dart';
+import 'package:doza_pet/features/auth/screen/signin_screen.dart';
 import 'package:doza_pet/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:doza_pet/screens/home_screen.dart';
@@ -29,9 +29,9 @@ class WidgetbookHotReload extends StatelessWidget {
             WidgetbookUseCase(
                 name: "Default", builder: (context) => const OnboardingScreen())
           ]),
-          WidgetbookComponent(name: "$LoginScreen", useCases: [
+          WidgetbookComponent(name: "$SignInScreen", useCases: [
             WidgetbookUseCase(
-                name: "Default", builder: (context) => const LoginScreen())
+                name: "Default", builder: (context) => const SignInScreen())
           ])
         ])
       ],

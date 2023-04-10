@@ -5,25 +5,28 @@ import 'package:doza_pet/features/auth/widgets/auth_redirect_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-class SignUpScreen extends ConsumerStatefulWidget {
-  const SignUpScreen({super.key});
+final supabase = Supabase.instance.client;
+
+class SignInScreen extends ConsumerStatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  ConsumerState<SignUpScreen> createState() => _SignUpScreenState();
+  ConsumerState<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends ConsumerState<SignUpScreen> {
+class _SignInScreenState extends ConsumerState<SignInScreen> {
   final appBar = UIConstants.appBar();
 
-  void onSignUp(String username, String password) {
+  void onSignIn(String username, String password) {
     ref
         .read(authControllerProvider.notifier)
-        .signUp(username: username, password: password, context: context);
+        .signIn(username: username, password: password, context: context);
   }
 
   void onFormHighlightedTextTap() {
-    Navigator.pop(context);
+    Navigator.pushNamed(context, RouteConstants.signUp);
   }
 
   @override
@@ -35,11 +38,11 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
         child: SingleChildScrollView(
             child: Column(
           children: [
-            AuthForm(onButtonTap: onSignUp),
+            AuthForm(onButtonTap: onSignIn),
             const SizedBox(height: 40),
             AuthRedirectText(
-                text: localizations!.signInAsk,
-                highlightedText: localizations.signIn,
+                text: localizations!.signUpAsk,
+                highlightedText: localizations.signUp,
                 onHighlightedTextTap: onFormHighlightedTextTap)
           ],
         )),
