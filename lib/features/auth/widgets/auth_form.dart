@@ -42,6 +42,7 @@ class _AuthFormState extends ConsumerState<AuthForm> {
             AuthField(
               controller: passwordController,
               hintText: localizations.password,
+              obscureText: true,
             ),
             const SizedBox(
               height: 40,
