@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeConstants.dark,
       initialRoute: "/",
       routes: {
-        "/": (context) => const SplashScreen(),
+        RouteConstants.root: (context) => const SplashScreen(),
         RouteConstants.home: (context) => const HomeScreen(),
         RouteConstants.signIn: (context) => const SignInScreen(),
         RouteConstants.signUp: (context) => const SignUpScreen()
