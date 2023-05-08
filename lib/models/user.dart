@@ -1,25 +1,25 @@
 import 'package:doza_pet/models/model.dart';
 
 class User extends Model {
-  final String username;
-  final String password;
+  final String email;
+  final BigInt phone;
 
-  User(this.username, this.password);
+  User(this.email, this.phone);
 
   @override
   bool operator ==(covariant User other) {
-    return other.username == username;
+    return other.email == email;
   }
 
   @override
-  int get hashCode => username.hashCode;
+  int get hashCode => email.hashCode;
 
   User.fromMap(Map<String, dynamic> data)
-      : username = data["username"],
-        password = data["password"];
+      : email = data["email"],
+        phone = data["celular"];
 
   @override
   Map<String, dynamic> toMap() {
-    return {"username": username, "password": password};
+    return {"email": email, "celular": phone};
   }
 }
