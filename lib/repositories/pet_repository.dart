@@ -2,7 +2,7 @@ import 'package:doza_pet/models/pet.dart';
 import 'package:doza_pet/repositories/repository.dart';
 
 class PetRepository extends Repository<Pet> {
-  PetRepository() : super(table: "mascota", primaryTableKey: "id");
+  PetRepository() : super(table: "mascota");
 
   @override
   Pet fromRequestData(Map<String, dynamic> data) {

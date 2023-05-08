@@ -2,7 +2,7 @@ import 'package:doza_pet/models/device.dart';
 import 'package:doza_pet/repositories/repository.dart';
 
 class DeviceRepository extends Repository<Device> {
-  DeviceRepository() : super(table: "dispositivo", primaryTableKey: "id");
+  DeviceRepository() : super(table: "dispositivo");
 
   @override
   Device fromRequestData(Map<String, dynamic> data) {
