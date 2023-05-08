@@ -1,5 +1,5 @@
 import 'package:doza_pet/db/db.dart';
-import 'package:doza_pet/models/model.dart';
+import 'package:doza_pet/models/models.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class Repository<T extends Model> {

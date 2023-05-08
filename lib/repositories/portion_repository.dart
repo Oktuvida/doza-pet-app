@@ -1,4 +1,4 @@
-import 'package:doza_pet/models/portion.dart';
+import 'package:doza_pet/models/models.dart';
 import 'package:doza_pet/repositories/repository.dart';
 
 class PortionRepository extends Repository<Portion> {

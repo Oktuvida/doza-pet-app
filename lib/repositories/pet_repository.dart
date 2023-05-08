@@ -1,4 +1,4 @@
-import 'package:doza_pet/models/pet.dart';
+import 'package:doza_pet/models/models.dart';
 import 'package:doza_pet/repositories/repository.dart';
 
 class PetRepository extends Repository<Pet> {

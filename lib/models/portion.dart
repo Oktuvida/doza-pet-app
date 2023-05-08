@@ -9,14 +9,14 @@ class Portion extends Model {
   @override
   Map<String, dynamic> toMap() {
     return {
-      "id_dispositivo": deviceId,
+      "id_dispositivo": deviceId.toString(),
       "comida_a_dispensar": foodToDispense,
-      "tiempo_dispensacion": dispensingTime
+      "tiempo_dispensacion": dispensingTime.toString()
     };
   }
 
   Portion.fromMap(Map<String, dynamic> data)
-      : deviceId = data["id_dispositivo"],
+      : deviceId = BigInt.parse(data["id_dispositivo"]),
         foodToDispense = data["comida_a_dispensar"],
-        dispensingTime = data["tiempo_dispensacion"];
+        dispensingTime = BigInt.parse(data["tiempo_dispensacion"]);
 }

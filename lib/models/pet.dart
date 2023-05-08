@@ -21,8 +21,8 @@ class Pet extends Model {
   @override
   Map<String, dynamic> toMap() {
     return {
-      "id": id,
-      "id_usuario": userId,
+      "id": id.toString(),
+      "id_usuario": userId.toString(),
       "nombre": name,
       "peso": weight,
       "raza": race,
@@ -32,8 +32,8 @@ class Pet extends Model {
   }
 
   Pet.fromMap(Map<String, dynamic> data)
-      : id = data["id"],
-        userId = data["id_usuario"],
+      : id = BigInt.parse(data["id"]),
+        userId = BigInt.parse(data["id_usuario"]),
         name = data["nombre"],
         weight = data["peso"],
         race = data["raza"],

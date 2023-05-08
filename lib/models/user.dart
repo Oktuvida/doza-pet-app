@@ -6,20 +6,12 @@ class User extends Model {
 
   User(this.email, this.phone);
 
-  @override
-  bool operator ==(covariant User other) {
-    return other.email == email;
-  }
-
-  @override
-  int get hashCode => email.hashCode;
-
   User.fromMap(Map<String, dynamic> data)
       : email = data["email"],
-        phone = data["celular"];
+        phone = BigInt.parse(data["celular"]);
 
   @override
   Map<String, dynamic> toMap() {
-    return {"email": email, "celular": phone};
+    return {"email": email, "celular": phone.toString()};
   }
 }

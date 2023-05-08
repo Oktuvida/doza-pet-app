@@ -8,10 +8,10 @@ class Device extends Model {
 
   @override
   Map<String, dynamic> toMap() {
-    return {"id": id, "id_mascota": petId};
+    return {"id": id.toString(), "id_mascota": petId.toString()};
   }
 
   Device.fromMap(Map<String, dynamic> data)
-      : id = data["id"],
-        petId = data["id_mascota"];
+      : id = BigInt.parse(data["id"]),
+        petId = BigInt.parse(data["id_mascota"]);
 }
