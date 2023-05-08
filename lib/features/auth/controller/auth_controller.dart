@@ -1,4 +1,5 @@
 import 'package:doza_pet/apis/auth_api.dart';
+import 'package:doza_pet/constants/constants.dart';
 import 'package:doza_pet/core/utils.dart';
 import 'package:doza_pet/models/models.dart';
 import 'package:doza_pet/repositories/repositories.dart';
@@ -26,10 +27,13 @@ class AuthController extends StateNotifier<bool> {
     state = true;
     final res = await _authAPI.signUp(email: email, password: password);
 
-    res.fold((l) => showSnackBar(context, l.message), (r) async {
+    if (res.isRight()) {
       final user = User(email, phone);
-
       await _userRepository.insert(user);
+    }
+
+    res.fold((l) => showSnackBar(context, l.message), (r) {
+      Navigator.pushReplacementNamed(context, RouteConstants.root);
     });
   }
 
@@ -40,7 +44,7 @@ class AuthController extends StateNotifier<bool> {
     state = true;
     final res = await _authAPI.signIn(email: email, password: password);
 
-    res.fold(
-        (l) => showSnackBar(context, l.message), (r) => debugPrint(r?.email));
+    res.fold((l) => showSnackBar(context, l.message),
+        (r) => Navigator.pushReplacementNamed(context, RouteConstants.root));
   }
 }

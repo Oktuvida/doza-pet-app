@@ -11,5 +11,13 @@
   "signUp": "Sign Up",
 
   "signInAsk": "Already registered?",
-  "signIn": "Sign In"
+  "signIn": "Sign In",
+
+  "name": "Name",
+  "weight": "Weight",
+  "race": "Race",
+  "age": "Age",
+  "foodBrand": "Food Brand",
+
+  "petInformation": "Pet Information"
 }

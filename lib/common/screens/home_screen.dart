@@ -1,4 +1,5 @@
 import 'package:doza_pet/constants/constants.dart';
+import 'package:doza_pet/features/register_pet/screens/pet_information_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,6 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: theme.colorScheme.primary,
           foregroundColor: theme.colorScheme.onPrimary,
         ),
-        body: const Text("Hi, mom!"));
+        body: const PetInformationScreen());
   }
 }

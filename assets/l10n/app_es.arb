@@ -11,5 +11,13 @@
   "signUp": "Regístrate",
 
   "signInAsk": "¿Ya estás registrado?",
-  "signIn": "Inicia sesión"
+  "signIn": "Inicia sesión",
+
+  "name": "Nombre",
+  "weight": "Peso",
+  "race": "Raza",
+  "age": "Edad",
+  "foodBrand": "Marca de alimento",
+
+  "petInformation": "Información de la mascota"
 }
