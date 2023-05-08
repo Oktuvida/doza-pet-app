@@ -1,4 +1,4 @@
-import 'package:doza_pet/common/rounded_small_button.dart';
+import 'package:doza_pet/common/widgets/rounded_small_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

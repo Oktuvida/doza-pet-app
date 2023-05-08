@@ -1,8 +1,8 @@
 import 'package:doza_pet/constants/constants.dart';
 import 'package:doza_pet/features/auth/screen/signin_screen.dart';
-import 'package:doza_pet/screens/onboarding_screen.dart';
+import 'package:doza_pet/common/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:doza_pet/screens/home_screen.dart';
+import 'package:doza_pet/common/screens/home_screen.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

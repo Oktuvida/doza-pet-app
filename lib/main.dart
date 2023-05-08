@@ -1,8 +1,8 @@
-import 'package:doza_pet/common/screens/splash_screen.dart';
+import 'package:doza_pet/common/common.dart';
 import 'package:doza_pet/constants/supabase_constants.dart';
 import 'package:doza_pet/features/auth/screen/signin_screen.dart';
 import 'package:doza_pet/features/auth/screen/signup_screen.dart';
-import 'package:doza_pet/screens/home_screen.dart';
+import 'package:doza_pet/common/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
