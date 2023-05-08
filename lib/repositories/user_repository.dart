@@ -11,6 +11,6 @@ class UserRepository extends Repository<User> {
 
   @override
   Map<String, dynamic> toRequestData(User data) {
-    throw data.toMap();
+    return data.toMap();
   }
 }
