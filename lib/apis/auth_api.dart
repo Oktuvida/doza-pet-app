@@ -6,10 +6,10 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 final supabase = Supabase.instance.client;
 
 final authAPIProvider = riverpod.Provider((ref) {
-  return AuthAPI();
+  return AuthAPIImpl();
 });
 
-abstract class IAuthAPI {
+abstract class AuthAPI {
   FutureEither<User?> signUp(
       {required String username, required String password});
 
@@ -17,7 +17,7 @@ abstract class IAuthAPI {
       {required String username, required String password});
 }
 
-class AuthAPI implements IAuthAPI {
+class AuthAPIImpl implements AuthAPI {
   @override
   FutureEither<User?> signUp(
       {required String username, required String password}) async {
