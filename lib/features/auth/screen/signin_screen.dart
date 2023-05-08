@@ -1,10 +1,11 @@
+import 'package:doza_pet/common/widgets/rounded_small_button.dart';
 import 'package:doza_pet/constants/constants.dart';
 import 'package:doza_pet/features/auth/controller/auth_controller.dart';
-import 'package:doza_pet/features/auth/widgets/auth_form.dart';
+import 'package:doza_pet/features/auth/widgets/auth_field.dart';
 import 'package:doza_pet/features/auth/widgets/auth_redirect_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 final supabase = Supabase.instance.client;
@@ -18,11 +19,21 @@ class SignInScreen extends ConsumerStatefulWidget {
 
 class _SignInScreenState extends ConsumerState<SignInScreen> {
   final appBar = UIConstants.appBar();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
-  void onSignIn(String username, String password) {
-    ref
-        .read(authControllerProvider.notifier)
-        .signIn(username: username, password: password, context: context);
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  void onSignIn() {
+    ref.read(authControllerProvider.notifier).signIn(
+        email: emailController.text,
+        password: passwordController.text,
+        context: context);
   }
 
   void onFormHighlightedTextTap() {
@@ -31,17 +42,47 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context);
+    final localizations = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: appBar,
       body: Center(
         child: SingleChildScrollView(
             child: Column(
           children: [
-            AuthForm(onButtonTap: onSignIn),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    AuthField(
+                        controller: emailController,
+                        hintText: localizations.username),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    AuthField(
+                      controller: passwordController,
+                      hintText: localizations.password,
+                      obscureText: true,
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: RoundedSmallButton(
+                        onTap: onSignIn,
+                        label: localizations.continueMessage,
+                        backgroundColor: theme.colorScheme.primary,
+                        textColor: theme.colorScheme.onPrimary,
+                      ),
+                    ),
+                  ],
+                )),
             const SizedBox(height: 40),
             AuthRedirectText(
-                text: localizations!.signUpAsk,
+                text: localizations.signUpAsk,
                 highlightedText: localizations.signUp,
                 onHighlightedTextTap: onFormHighlightedTextTap)
           ],

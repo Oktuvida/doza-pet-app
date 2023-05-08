@@ -1,6 +1,7 @@
 {
   "continueMessage": "Continue",
-  "username": "Username",
+  "username": "Email",
+  "phone": "Phone",
   "password": "Password",
   "welcomeHeaderMessage": "Welcome to our app!",
   "welcomeBodyMessage": "Here you can make sure your pet always has enough food",

@@ -10,20 +10,18 @@ final authAPIProvider = riverpod.Provider((ref) {
 });
 
 abstract class AuthAPI {
-  FutureEither<User?> signUp(
-      {required String username, required String password});
+  FutureEither<User?> signUp({required String email, required String password});
 
-  FutureEither<User?> signIn(
-      {required String username, required String password});
+  FutureEither<User?> signIn({required String email, required String password});
 }
 
 class AuthAPIImpl implements AuthAPI {
   @override
   FutureEither<User?> signUp(
-      {required String username, required String password}) async {
+      {required String email, required String password}) async {
     try {
       final result =
-          await supabase.auth.signUp(email: username, password: password);
+          await supabase.auth.signUp(email: email, password: password);
       return right(result.user);
     } on AuthException catch (e, stackTrace) {
       return left(Failure(e.message, stackTrace));
@@ -34,10 +32,10 @@ class AuthAPIImpl implements AuthAPI {
 
   @override
   FutureEither<User?> signIn(
-      {required String username, required String password}) async {
+      {required String email, required String password}) async {
     try {
       final result = await supabase.auth
-          .signInWithPassword(email: username, password: password);
+          .signInWithPassword(email: email, password: password);
       return right(result.user);
     } on AuthException catch (e, stackTrace) {
       return left(Failure(e.message, stackTrace));
