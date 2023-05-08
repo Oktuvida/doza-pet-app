@@ -1,14 +1,13 @@
 import 'package:doza_pet/common/common.dart';
+import 'package:doza_pet/common/screens/home_screen.dart';
+import 'package:doza_pet/constants/constants.dart';
 import 'package:doza_pet/constants/supabase_constants.dart';
 import 'package:doza_pet/features/auth/screen/signin_screen.dart';
 import 'package:doza_pet/features/auth/screen/signup_screen.dart';
-import 'package:doza_pet/common/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
-import 'constants/constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
