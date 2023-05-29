@@ -1,8 +1,8 @@
 import 'package:doza_pet/models/model.dart';
 
 class Pet extends Model {
-  final BigInt id;
-  final BigInt userId;
+  final BigInt? id;
+  final String userId;
   final String name;
   final double weight;
   final String race;
@@ -10,7 +10,7 @@ class Pet extends Model {
   final String foodBrand;
 
   Pet(
-      {required this.id,
+      {this.id,
       required this.userId,
       required this.name,
       required this.weight,
@@ -21,7 +21,6 @@ class Pet extends Model {
   @override
   Map<String, dynamic> toMap() {
     return {
-      "id": id.toString(),
       "id_usuario": userId.toString(),
       "nombre": name,
       "peso": weight,
@@ -32,10 +31,10 @@ class Pet extends Model {
   }
 
   Pet.fromMap(Map<String, dynamic> data)
-      : id = BigInt.parse(data["id"]),
-        userId = BigInt.parse(data["id_usuario"]),
+      : id = BigInt.from(data["id"]),
+        userId = data["id_usuario"],
         name = data["nombre"],
-        weight = data["peso"],
+        weight = data["peso"] + 0.0,
         race = data["raza"],
         age = data["edad"],
         foodBrand = data["marca_alimento"];

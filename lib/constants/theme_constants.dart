@@ -5,11 +5,11 @@ abstract class ThemeConstants {
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.light,
-          seedColor: const Color.fromARGB(255, 184, 166, 72)));
+          seedColor: const Color.fromRGBO(254, 150, 199, 1)));
 
   static final ThemeData dark = ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
-          seedColor: const Color.fromARGB(255, 184, 166, 72)));
+          seedColor: const Color.fromRGBO(254, 150, 199, 1)));
 }

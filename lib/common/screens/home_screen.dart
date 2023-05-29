@@ -1,25 +1,24 @@
-import 'package:doza_pet/constants/constants.dart';
+import 'package:doza_pet/features/portions/screens/portion_screen.dart';
 import 'package:doza_pet/features/register_pet/screens/pet_information_screen.dart';
+import 'package:doza_pet/notifiers/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    final pets = ref.watch(userProvider).pets;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(AppConstants.name),
-          backgroundColor: theme.colorScheme.primary,
-          foregroundColor: theme.colorScheme.onPrimary,
-        ),
-        body: const PetInformationScreen());
+        body: pets.isNotEmpty
+            ? const PortionScreen()
+            : const PetInformationScreen());
   }
 }

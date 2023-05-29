@@ -1,5 +1,7 @@
 {
   "continueMessage": "Continuar",
+  "cancelMessage": "Cancelar",
+
   "username": "Correo electrónico",
   "phone": "Celular",
   "password": "Contraseña",
@@ -19,5 +21,13 @@
   "age": "Edad",
   "foodBrand": "Marca de alimento",
 
-  "petInformation": "Información de la mascota"
+  "petInformation": "Información de la mascota",
+
+  "portions": "Porciones",
+  "addPortion": "Agregar Porción",
+  "foodToDispense": "Comida A Dispensar",
+  "dispensingTime": "Tiempo Dispensación",
+
+  "portionRemoved": "La porción fue removida exitosamente",
+  "portionAdded": "La porción fue agregada exitosamente"
 }

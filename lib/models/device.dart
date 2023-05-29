@@ -12,6 +12,6 @@ class Device extends Model {
   }
 
   Device.fromMap(Map<String, dynamic> data)
-      : id = BigInt.parse(data["id"]),
-        petId = BigInt.parse(data["id_mascota"]);
+      : id = BigInt.from(data["id"]),
+        petId = BigInt.from(data["id_mascota"]);
 }

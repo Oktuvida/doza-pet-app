@@ -1,6 +1,6 @@
-import 'package:doza_pet/apis/auth_api.dart';
 import 'package:doza_pet/constants/constants.dart';
 import 'package:doza_pet/core/utils.dart';
+import 'package:doza_pet/features/auth/apis/auth_api.dart';
 import 'package:doza_pet/models/models.dart';
 import 'package:doza_pet/repositories/repositories.dart';
 import 'package:flutter/material.dart';
@@ -29,12 +29,15 @@ class AuthController extends StateNotifier<bool> {
 
     if (res.isRight()) {
       final user = User(email, phone);
-      await _userRepository.insert(user);
+      (await _userRepository.insert(data: user))
+          .fold((l) => showSnackBar(context, l.message), (r) {
+        Navigator.pushReplacementNamed(context, RouteConstants.root);
+      });
+    } else {
+      res.fold((l) => showSnackBar(context, l.message), (r) {
+        Navigator.pushReplacementNamed(context, RouteConstants.root);
+      });
     }
-
-    res.fold((l) => showSnackBar(context, l.message), (r) {
-      Navigator.pushReplacementNamed(context, RouteConstants.root);
-    });
   }
 
   void signIn(

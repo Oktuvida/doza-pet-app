@@ -8,7 +8,7 @@ class User extends Model {
 
   User.fromMap(Map<String, dynamic> data)
       : email = data["email"],
-        phone = BigInt.parse(data["celular"]);
+        phone = BigInt.from(data["celular"]);
 
   @override
   Map<String, dynamic> toMap() {

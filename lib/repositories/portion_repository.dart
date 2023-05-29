@@ -2,7 +2,7 @@ import 'package:doza_pet/models/models.dart';
 import 'package:doza_pet/repositories/repository.dart';
 
 class PortionRepository extends Repository<Portion> {
-  PortionRepository() : super(table: "portion");
+  PortionRepository() : super(table: "porcion");
 
   @override
   Portion fromRequestData(Map<String, dynamic> data) {

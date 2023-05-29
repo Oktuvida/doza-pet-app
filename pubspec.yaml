@@ -43,6 +43,7 @@ dependencies:
   fpdart: ^0.5.0
   supabase_flutter: ^1.6.2
   envied: ^0.3.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -100,3 +101,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+  adaptive_icon_foreground: "assets/images/logo_foreground.png"
+  adaptive_icon_background: "#ffffff"
